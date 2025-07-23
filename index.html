@@ -112,42 +112,58 @@
 
       if (pt === "SAT") {
         const dqd = qdsat(diem);
+        if (dqd !== null)
         ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+        else ketQua.textContent = "❗ Vui lòng chọn phương thức và nhập điểm hợp lệ.";
       }
       
       if (pt === "XTTN") {
         const dqd = qdtn(diem);
+        if (dqd !== null)
         ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+        else ketQua.textContent = "❗ Vui lòng chọn phương thức và nhập điểm hợp lệ.";
       }
 
       if (pt === "HSA") {
         const dqd = qdhsa(diem);
+        if (dqd !== null)
         ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+        else ketQua.textContent = "❗ Vui lòng chọn phương thức và nhập điểm hợp lệ.";
       }
 
       if (pt === "TSA") {
         const dqd = qdtsa(diem);
+        if (dqd !== null)
         ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+        else ketQua.textContent = "❗ Vui lòng chọn phương thức và nhập điểm hợp lệ.";
       }
 
       if (pt === "SPT") {
         const dqd = qdspt(diem);
+        if (dqd !== null)
         ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+        else ketQua.textContent = "❗ Vui lòng chọn phương thức và nhập điểm hợp lệ.";
       }
 
       if (pt === "APT") {
         const dqd = qdapt(diem);
+        if (dqd !== null)
         ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+        else ketQua.textContent = "❗ Vui lòng chọn phương thức và nhập điểm hợp lệ.";
       }
 
       if (pt === "XTKH") {
         const dqd = qdkh(diem);
+        if (dqd !== null)
         ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+        else ketQua.textContent = "❗ Vui lòng chọn phương thức và nhập điểm hợp lệ.";
       }
 
       if (pt === "ACT") {
         const dqd = qdact(diem);
+        if (dqd !== null)
         ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+        else ketQua.textContent = "❗ Vui lòng chọn phương thức và nhập điểm hợp lệ.";
       }
     }
   </script>
