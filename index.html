@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quy đổi điểm</title>
+</head>
+<body>
+  <h1>Quy Đổi Điểm</h1>
+
+  <label for="phuong-thuc">Phương thức:</label>
+  <select id="phuong-thuc">
+    <option value="SAT">SAT</option>
+    <option value="XTTN">XTTN</option>
+    <option value="ACT">ACT</option>
+    <option value="HSA">HSA</option>
+    <option value="TSA">TSA</option>
+    <option value="SPT">SPT</option>
+    <option value="APT">APT</option>
+    <option value="XTKH">XTKH</option>
+  </select>
+
+  <br><br>
+  <label for="diem">Điểm gốc:</label>
+  <input type="number" id="diem" step="0.01">
+
+  <br><br>
+  <button onclick="quyDoi()">Tính điểm</button>
+
+  <h2 id="ket-qua"></h2>
+
+  <script>
+    function qdsat(diem) { // done
+        if (diem >= 1130 && diem < 1250) return 20.5+((diem-1130)/(1250-1130)*(23.5-20.5));
+        if (diem >= 1250 && diem < 1350) return 23.5+((diem-1250)/(1350-1250)*(25.25-23.5));
+        if (diem >= 1350 && diem < 1450) return 25.25+((diem-1350)/(1450-1350)*(27.25-25.25));
+        if (diem >= 1450 && diem <= 1600) return 27.25+((diem-1450)/(1600-1450)*(30-27.25));
+        else return null;
+    }
+
+    function qdtn(diem) { // done
+        if (diem >= 42.5 && diem < 80) return 23.5+((diem-42.5)/(80-42.5)*(25.25-23.5));
+        if (diem >= 80 && diem < 85) return 25.25+((diem-80)/(85-80)*(27.25-25.25));
+        if (diem >= 85 && diem <= 100) return 27.25+((diem-80)/(100-80)*(30-27.25));
+        else return null;
+    }
+
+    function qdact(diem) { // done 
+        if (diem >= 25 && diem < 28) return 20.5+((diem-25)/(28-25)*(23.5-20.5));
+        if (diem >= 28 && diem < 30) return 23.5+((diem-28)/(30-28)*(25.25-23.5));
+        if (diem >=30 && diem < 33) return 25.25+((diem-30)/(33-30)*(27.25-25.25));
+        if (diem >= 33 && diem <= 36) return 27.25+((diem-33)/(36-33)*(30-27.25));
+        else return null;
+    }
+    
+    function qdhsa(diem) {
+        if (diem >= 75 && diem < 82) return 19+((diem-75)/(1600-75)*(20.5-19));
+        if (diem >= 82 && diem < 91) return 20.5+((diem-82)/(91-82)*(23.5-20.5));
+        if (diem >= 91 && diem < 97) return 23.5+((diem-91)/(97-91)*(25.25-23.5));
+        if (diem >= 97 && diem < 105) return 25.25+((diem-97)/(105-97)*(27.25-25.25));
+        if (diem >= 105 && diem <= 150) return 27.25+((diem-105)/(150-105)*(30-27.25));
+        else return null;
+    }
+
+    function qdtsa(diem) { // done
+        if (diem >= 50 && diem < 59.5) return 19+((diem-50)/(59.5-50)*(20.5-19));
+        if (diem >= 59.5 && diem < 65.42) return 20.5+((diem-59.5)/(65.42-59.5)*(23.5-20.5));
+        if (diem >= 65.42 && diem < 69.29) return 23.5+((diem-65.42)/(69.29-65.42)*(25.25-23.5));
+        if (diem >= 69.29 && diem < 75.53) return 25.25+((diem-69.29)/(75.53-69.29)*(27.25-25.25));
+        if (diem >= 75.53 && diem <= 100) return 27.25+((diem-75.53)/(100-75.53)*(30-27.25));
+        else return null;
+    }
+
+    function qdspt(diem) { // done
+        if (diem >= 15 && diem < 18.25) return 19+((diem-15)/(18.25-15)*(20.5-19));
+        if (diem >= 18.25 && diem < 20.5) return 20.5+((diem-18.25)/(20.5-18.25)*(23.5-20.5));
+        if (diem >= 20.5 && diem < 22.75) return 23.5+((diem-20.5)/(22.75-20.5)*(25.25-23.5));
+        if (diem >= 22.75 && diem < 25) return 25.25+((diem-22.75)/(25-22.75)*(27.25-25.25));
+        if (diem >= 25 && diem <= 30) return 27.25+((diem-25)/(30-25)*(30-27.25));
+        else return null;
+    }
+
+    function qdapt(diem) { // done
+        if (diem >= 600 && diem < 702) return 19+((diem-600)/(702-600)*(20.5-19));
+        if (diem >= 702 && diem < 816) return 20.5+((diem-702)/(816-702)*(23.5-20.5));
+        if (diem >= 816 && diem < 887) return 23.5+((diem-816)/(887-816)*(25.25-23.5));
+        if (diem >= 887 && diem < 959) return 25.25+((diem-887)/(959-887)*(27.25-25.25));
+        if (diem >= 959 && diem <= 1200) return 27.25+((diem-959)/(1200-959)*(30-27.25));
+        else return null;
+    }
+
+    function qdkh(diem) {
+        if (diem >= 22.5 && diem < 24.5) return 19+((diem-22.5)/(24.5-22.5)*(20.5-19));
+        if (diem >= 24.5 && diem < 26.5) return 20.5+((diem-24.5)/(26.5-24.5)*(23.5-20.5));
+        if (diem >= 26.5 && diem < 27.75) return 23.5+((diem-26.5)/(27.75-26.5)*(25.25-23.5));
+        if (diem >= 27.75 && diem < 28.75) return 25.25+((diem-27.75)/(28.75-27.75)*(27.25-25.25));
+        if (diem >= 28.75 && diem <= 30) return 27.25+((diem-28.75)/(30-28.75)*(30-27.25));
+        else return null;
+    }
+
+    function quyDoi() {
+      const pt = document.getElementById('phuong-thuc').value;
+      const diem = parseFloat(document.getElementById('diem').value);
+      const ketQua = document.getElementById('ket-qua');
+
+      // Kiểm tra đầu vào
+      if (!pt || isNaN(diem)) {
+        ketQua.textContent = "❗ Vui lòng chọn phương thức và nhập điểm hợp lệ.";
+        return;
+      }
+
+      // quy đổi
+
+      if (pt === "SAT") {
+        const dqd = qdsat(diem);
+        ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+      }
+      
+      if (pt === "XTTN") {
+        const dqd = qdtn(diem);
+        ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+      }
+
+      if (pt === "HSA") {
+        const dqd = qdhsa(diem);
+        ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+      }
+
+      if (pt === "TSA") {
+        const dqd = qdtsa(diem);
+        ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+      }
+
+      if (pt === "SPT") {
+        const dqd = qdspt(diem);
+        ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+      }
+
+      if (pt === "APT") {
+        const dqd = qdapt(diem);
+        ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+      }
+
+      if (pt === "XTKH") {
+        const dqd = qdkh(diem);
+        ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+      }
+
+      if (pt === "ACT") {
+        const dqd = qdact(diem);
+        ketQua.textContent = "✅ Điểm quy đổi THPT của bạn là: " + dqd.toFixed(2);
+      }
+    }
+  </script>
+</body>
+</html>
